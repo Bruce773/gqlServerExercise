@@ -11,6 +11,7 @@ export const UserEmail = styled.div`
   font-size: 30px;
   color: darkgray;
   margin-bottom: 10px;
+  word-break: break-word;
 `;
 
 export const FriendsEmail = styled.div`
@@ -37,6 +38,8 @@ export const TitleText = styled.div`
 export const UserInfoBox = styled.div`
   box-shadow: 1px 1px 6px 0px #7d9e7d82;
   width: 50%;
+  max-width: 900px;
+  min-width: 400px;
   padding: 10px;
   text-align: center;
   margin: auto;
@@ -55,6 +58,32 @@ export const Avatar = styled.div`
 export const AvatarText = styled.div`
   display: block;
   font-size: 20px;
+`;
+
+export const StyledInput = styled.input`
+  font-size: 25px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+`;
+
+export const InlineColumn = styled.div`
+  display: inline;
+`;
+
+export const CenterWrapper = styled.div`
+  text-align: center;
+`;
+
+export const ExitButton = styled.div`
+  font-size: 17px;
+  text-align: left;
+  box-shadow: 1px 1px 6px 0px #7d9e7d82;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 6px;
+  cursor: pointer;
 `;
 
 export const Divider = styled.div<{ top?: number; bottom?: number }>`
