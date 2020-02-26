@@ -3,9 +3,9 @@ My gql server built for learning purposes
 --
 ## Setup
 - [ ] Clone repo
-- [ ] Run `npm install` from project root
-- [ ] Run `nodemon server.js`. If this gives you errors, try installing nodemon either globally (`-g`) or with `npx`
-- [ ] Navigate to `localhost:8181` to open the GQL Playground  
+- [ ] Run `npm install` from `~/server`
+- [ ] Cd into `~/server` and run `nodemon server.js`. If this gives you errors, try installing nodemon either globally (`-g`) or with `npx`
+- [ ] Navigate to `localhost:8181` to open the GQL Playground
 ### Future plans:
 
 ## Mutations:
