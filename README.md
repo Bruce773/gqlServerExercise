@@ -1,7 +1,10 @@
 # GQL Server Exercise
 My gql server built for learning purposes
 --
-
+## Installing
+- [ ] Clone repo
+- [ ] Run `npm install` from project root
+- [ ] Run `nodemon server.js`. If this gives you errors, try installing nodemon either globally (`-g`) or with `npx`
 ### Future plans:
 
 ## Mutations:
