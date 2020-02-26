@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledTitle, UserEmail, Divider } from "./elements";
+import { StyledTitle, UserEmail, Divider, Subtitle } from "./elements";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { User } from "../types";
@@ -28,6 +28,7 @@ export const HomeScreen: React.FC = () => {
   return (
     <>
       <StyledTitle>Welcome to a test!</StyledTitle>
+      <Subtitle>Go ahead! Pick a user</Subtitle>
       {loading && "Loading..."}
       {error && error}
       <Divider top={80} bottom={80} />

@@ -63,7 +63,9 @@ export const UserInfoSection: React.FC<User> = ({ email, friends, avatar }) => {
                 onChange={handleChange}
                 value={passwordVal}
               />
-              <StyledButton onClick={() => setIsDefault(true)}>
+              <StyledButton
+                onClick={() => alert("Login feature not available, yet!")}
+              >
                 Login
               </StyledButton>
             </CenterWrapper>

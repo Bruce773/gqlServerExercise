@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledTitle = styled.div`
   font-size: 52px;
@@ -45,6 +45,7 @@ export const UserInfoBox = styled.div`
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
+  cursor: pointer;
 `;
 
 export const Avatar = styled.div`
@@ -66,6 +67,7 @@ export const StyledInput = styled.input`
   margin-top: 10px;
   margin-bottom: 10px;
   display: block;
+  border-radius: 5px;
 `;
 
 export const InlineColumn = styled.div`
@@ -84,6 +86,11 @@ export const ExitButton = styled.div`
   width: fit-content;
   padding: 6px;
   cursor: pointer;
+`;
+
+export const Subtitle = styled.div`
+  font-size: 20px;
+  text-align: center;
 `;
 
 export const Divider = styled.div<{ top?: number; bottom?: number }>`
