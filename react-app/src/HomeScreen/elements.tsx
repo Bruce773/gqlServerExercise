@@ -35,13 +35,26 @@ export const TitleText = styled.div`
 `;
 
 export const UserInfoBox = styled.div`
-  box-shadow: 1px 1px 6px 0px;
+  box-shadow: 1px 1px 6px 0px #7d9e7d82;
   width: 50%;
   padding: 10px;
   text-align: center;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
+`;
+
+export const Avatar = styled.div`
+  display: inline-block;
+  background-color: grey;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+`;
+
+export const AvatarText = styled.div`
+  display: block;
+  font-size: 20px;
 `;
 
 export const Divider = styled.div<{ top?: number; bottom?: number }>`

@@ -5,11 +5,19 @@ import {
   FriendsEmail,
   TitleText,
   UserInfoBox,
-  StyledButton
+  StyledButton,
+  Avatar,
+  AvatarText
 } from "./elements";
 
-export const UserInfoSection: React.FC<User> = ({ email, friends }) => (
+export const UserInfoSection: React.FC<User> = ({ email, friends, avatar }) => (
   <UserInfoBox>
+    {avatar && (
+      <>
+        <AvatarText>{avatar}</AvatarText>
+        <Avatar />
+      </>
+    )}
     <UserEmail>{email}</UserEmail>
     <TitleText>Friends:</TitleText>
     {friends ? (
