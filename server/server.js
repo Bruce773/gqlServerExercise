@@ -20,11 +20,20 @@ const typeDefs = gql`
     friends: [User]
   }
 
+  input EmailInput {
+    userEmail: String!
+  }
+
+  input UpdateEmailInput {
+    currentEmail: String!
+    newEmail: String!
+  }
+
   type Query {
     allUsers: [User]!
-    verifyUser(userEmail: String!, userPassword: String!): Verified!
-    allFriends(userEmail: String!): [User]
-    updateUserEmail(currentEmail: String!, newEmail: String!): UpdatedEmail!
+    verifyUser(userEmail: String!, userPassword: String!): Verified! # Should be mutation
+    allFriends(input: EmailInput): [User]
+    updateUserEmail(input: UpdateEmailInput): UpdatedEmail! # Should be mutation
   }
 `;
 
@@ -40,8 +49,8 @@ const resolvers = {
       }
       return usersList;
     },
-    allFriends: (_, { userEmail }) => data[userEmail].friends,
-    verifyUser(_, { userEmail, userPassword }) {
+    allFriends: (_, { input: { userEmail } }) => data[userEmail].friends,
+    verifyUser(_, { input: { userEmail, userPassword } }) {
       if (!data[userEmail]) {
         return {
           error: "Email is not connected to an account!"
@@ -51,7 +60,7 @@ const resolvers = {
         ? { isUser: true }
         : { isUser: false };
     },
-    updateUserEmail(_, { currentEmail, newEmail }) {
+    updateUserEmail(_, { input: { currentEmail, newEmail } }) {
       if (!data[currentEmail]) {
         return { error: "Email is not connected to an account!" };
       }
