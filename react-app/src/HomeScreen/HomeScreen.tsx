@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledTitle, UserEmail, Divider, Subtitle } from "./elements";
+import { StyledTitle, Divider, Subtitle } from "./elements";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { User } from "../types";
