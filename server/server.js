@@ -29,11 +29,19 @@ const typeDefs = gql`
     newEmail: String!
   }
 
+  input VerifyUserInput {
+    userEmail: String!
+    userPassword: String!
+  }
+
   type Query {
     allUsers: [User]!
-    verifyUser(userEmail: String!, userPassword: String!): Verified! # Should be mutation
     allFriends(input: EmailInput): [User]
-    updateUserEmail(input: UpdateEmailInput): UpdatedEmail! # Should be mutation
+  }
+
+  type Mutation {
+    verifyUser(input: VerifyUserInput): Verified!
+    updateUserEmail(input: UpdateEmailInput): UpdatedEmail!
   }
 `;
 
@@ -49,7 +57,9 @@ const resolvers = {
       }
       return usersList;
     },
-    allFriends: (_, { input: { userEmail } }) => data[userEmail].friends,
+    allFriends: (_, { input: { userEmail } }) => data[userEmail].friends
+  },
+  Mutation: {
     verifyUser(_, { input: { userEmail, userPassword } }) {
       if (!data[userEmail]) {
         return {
