@@ -3,6 +3,9 @@ const { ApolloServer } = require("apollo-server");
 const { data, updateEmail } = require("./database.ts");
 
 const typeDefs = gql`
+    """
+    Documentation viewable in tools
+    """
   type Verified {
     isUser: Boolean
     error: String
