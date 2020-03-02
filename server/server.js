@@ -1,11 +1,11 @@
 const gql = require("graphql-tag");
 const { ApolloServer } = require("apollo-server");
-const { data, updateEmail } = require("./database.ts");
+const { resolvers } = require("./resolvers.js");
 
 const typeDefs = gql`
-    """
-    Documentation viewable in tools
-    """
+  """
+  Documentation viewable in tools
+  """
   type Verified {
     isUser: Boolean
     error: String
@@ -47,42 +47,6 @@ const typeDefs = gql`
     updateUserEmail(input: UpdateEmailInput): UpdatedEmail!
   }
 `;
-
-const resolvers = {
-  Query: {
-    // Resolver names must match the field names in the schema types
-    allUsers() {
-      const usersList = [];
-      let i = 0;
-      for (key in data) {
-        usersList[i] = data[key];
-        i++;
-      }
-      return usersList;
-    },
-    allFriends: (_, { input: { userEmail } }) => data[userEmail].friends
-  },
-  Mutation: {
-    verifyUser(_, { input: { userEmail, userPassword } }) {
-      if (!data[userEmail]) {
-        return {
-          error: "Email is not connected to an account!"
-        };
-      }
-      return data[userEmail].password === userPassword
-        ? { isUser: true }
-        : { isUser: false };
-    },
-    updateUserEmail(_, { input: { currentEmail, newEmail } }) {
-      if (!data[currentEmail]) {
-        return { error: "Email is not connected to an account!" };
-      }
-      return updateEmail({ currentEmail, newEmail }).then(newUserEmail => ({
-        newEmail: newUserEmail
-      }));
-    }
-  }
-};
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
