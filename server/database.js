@@ -58,12 +58,4 @@ let data = {
   }
 };
 
-module.exports.updateEmail = async ({ currentEmail, newEmail }) => {
-  const updateEmail = () => {
-    data[currentEmail].email = newEmail;
-  };
-  updateEmail();
-  return data[currentEmail].email;
-};
-
 module.exports.data = data;

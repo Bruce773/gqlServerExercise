@@ -1,5 +1,4 @@
 const data = require("./database.js").data;
-const updateEmail = require("./database.js").updateEmail;
 
 const allUsers = () => {
   const usersList = [];
@@ -28,9 +27,8 @@ const updateUserEmail = (_, { input: { currentEmail, newEmail } }) => {
   if (!data[currentEmail]) {
     return { error: "Email is not connected to an account!" };
   }
-  return updateEmail({ currentEmail, newEmail }).then(newUserEmail => ({
-    newEmail: newUserEmail
-  }));
+  data[currentEmail].email = newEmail;
+  return { newEmail: data[currentEmail].email };
 };
 
 module.exports.resolvers = {
