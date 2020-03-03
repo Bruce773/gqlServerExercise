@@ -8,6 +8,7 @@ const typeDefs = gql`
   """
   type Verified {
     isUser: Boolean
+    userData: User
     error: String
   }
 

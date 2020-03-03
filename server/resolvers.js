@@ -19,7 +19,7 @@ const verifyUser = (_, { input: { userEmail, userPassword } }) => {
     };
   }
   return data[userEmail].password === userPassword
-    ? { isUser: true }
+    ? { isUser: true, userData: data[userEmail] }
     : { isUser: false };
 };
 

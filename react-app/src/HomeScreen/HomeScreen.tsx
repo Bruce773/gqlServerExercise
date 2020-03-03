@@ -1,9 +1,10 @@
 import React from "react";
 import { StyledTitle, Divider, Subtitle } from "./elements";
 import { gql } from "apollo-boost";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "react-apollo";
 import { User } from "../types";
 import { UserInfoSection } from "./UserInfoSection";
+import { useCurrentUser } from "../Hooks";
 
 const GET_ALL_USERS = gql`
   {
@@ -24,6 +25,7 @@ interface AllUsers {
 
 export const HomeScreen: React.FC = () => {
   const { loading, error, data } = useQuery<AllUsers>(GET_ALL_USERS);
+  const { currentUser, logInUser, errors } = useCurrentUser();
 
   return (
     <>
@@ -32,8 +34,19 @@ export const HomeScreen: React.FC = () => {
       {loading && "Loading..."}
       {error && error}
       <Divider top={80} bottom={80} />
-      {data &&
-        data.allUsers.map(({ ...rest }) => <UserInfoSection {...rest} />)}
+      {!currentUser ? (
+        data &&
+        data.allUsers.map(({ ...rest }) => (
+          <UserInfoSection logInUser={logInUser} {...rest} />
+        ))
+      ) : (
+        <>
+          <StyledTitle>{currentUser.email}</StyledTitle>
+          {currentUser.friends?.map(({ email }) => (
+            <Subtitle>{email}</Subtitle>
+          ))}
+        </>
+      )}
     </>
   );
 };

@@ -1,7 +1,7 @@
 let data = {
   "bruce@blank.com": {
     email: "bruce@blank.com",
-    password: "passwordhash!@)(*&^%$#@",
+    password: "password",
     friends: [
       {
         email: "friendEmail@fsdkj.com",

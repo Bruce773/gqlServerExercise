@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeScreen } from "./HomeScreen";
-import { ApolloProvider } from "@apollo/react-hooks";
+import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 
 const client = new ApolloClient({
