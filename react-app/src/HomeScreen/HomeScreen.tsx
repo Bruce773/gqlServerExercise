@@ -25,7 +25,7 @@ interface AllUsers {
 
 export const HomeScreen: React.FC = () => {
   const { loading, error, data } = useQuery<AllUsers>(GET_ALL_USERS);
-  const { currentUser, logInUser, errors } = useCurrentUser();
+  const { currentUser, logInUser } = useCurrentUser();
 
   return (
     <>

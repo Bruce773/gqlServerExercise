@@ -9,7 +9,6 @@ interface Credentials {
 }
 
 export type UseCurrentUser_LogInUser = ({}: Credentials) => {
-  currenUser?: User;
   errors?: string | null;
 };
 
@@ -51,7 +50,7 @@ export const useCurrentUser = () => {
 
   const logInUser: UseCurrentUser_LogInUser = ({ userEmail, userPassword }) => {
     verifyUser({ variables: { userEmail, userPassword } });
-    return { currentUser, errors };
+    return { errors };
   };
 
   return { currentUser, logInUser, errors };
