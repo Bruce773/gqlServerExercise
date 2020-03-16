@@ -1,23 +1,10 @@
 import React from "react";
 import { StyledTitle, Divider, Subtitle } from "./elements";
-import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
 import { User } from "../types";
 import { UserInfoSection } from "./UserInfoSection";
 import { useCurrentUser } from "../Hooks";
-
-const GET_ALL_USERS = gql`
-  {
-    allUsers {
-      email
-      friends {
-        email
-        avatar
-      }
-      avatar
-    }
-  }
-`;
+import { GET_ALL_USERS } from "../operations";
 
 interface AllUsers {
   allUsers: [User];

@@ -11,7 +11,7 @@ My gql server built for learning purposes
 ## Mutations:
 - To create new users
 - To remove a user
-- To _actually_ sign in a user
+- [x] To _actually_ sign in a user
 - To allow updating of password
 - To allow storage of user settings
   - First and Last name
@@ -20,4 +20,4 @@ My gql server built for learning purposes
 
 ## Queries:
 
-- To fetch user data for currently logged in user
+- [x] To fetch user data for currently logged in user

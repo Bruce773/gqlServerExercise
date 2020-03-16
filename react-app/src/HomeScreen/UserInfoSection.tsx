@@ -20,7 +20,7 @@ export const UserInfoSection: React.FC<User & {
   logInUser: UseCurrentUser_LogInUser;
 }> = ({ email, friends, avatar, logInUser }) => {
   const [isDefault, setIsDefault] = useState(true);
-  const [loginErrors, setLoginErrors] = useState();
+  const [loginErrors, setLoginErrors] = useState("");
   const {
     handleChange,
     values: { emailAddressVal, passwordVal }

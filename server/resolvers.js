@@ -1,4 +1,4 @@
-const data = require("./database.js").data;
+const { data } = require("./database.js");
 
 const allUsers = () => {
   const usersList = [];
