@@ -9,14 +9,14 @@ My gql server built for learning purposes
 ### Future plans:
 
 ## Mutations:
-- To create new users
-- To remove a user
+- [ ] To create new users
+- [ ] To remove a user
 - [x] To _actually_ sign in a user
-- To allow updating of password
-- To allow storage of user settings
-  - First and Last name
-  - Image (`Upload` scalar)
-- To allow adding and removing of friends
+- [ ] To allow updating of password
+- [ ] To allow storage of user settings
+  - [ ] First and Last name
+  - [ ] Image (`Upload` scalar)
+- [ ] To allow adding and removing of friends
 
 ## Queries:
 
