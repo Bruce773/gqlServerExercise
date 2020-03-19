@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import Paper from "@material-ui/core/Paper";
 
 export const StyledTitle = styled.div`
   font-size: 52px;
   text-align: center;
-  color: #16db17f2;
+  color: #44972cf2;
 `;
 
 export const UserEmail = styled.div`
@@ -35,8 +36,7 @@ export const TitleText = styled.div`
   margin-bottom: 10px;
 `;
 
-export const UserInfoBox = styled.div`
-  box-shadow: 1px 1px 6px 0px #7d9e7d82;
+export const UserInfoBox = styled(Paper)`
   width: 50%;
   max-width: 900px;
   min-width: 400px;
@@ -91,6 +91,7 @@ export const ExitButton = styled.div`
 export const Subtitle = styled.div`
   font-size: 20px;
   text-align: center;
+  color: #abd8ff;
 `;
 
 export const Divider = styled.div<{ top?: number; bottom?: number }>`

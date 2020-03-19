@@ -15,6 +15,8 @@ import {
 } from "./elements";
 import { useFormik } from "formik";
 import { UseCurrentUser_LogInUser } from "../Hooks/useCurrentUser";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 export const UserInfoSection: React.FC<User & {
   logInUser: UseCurrentUser_LogInUser;
@@ -30,7 +32,10 @@ export const UserInfoSection: React.FC<User & {
   });
 
   return (
-    <UserInfoBox onClick={() => isDefault && setIsDefault(false)}>
+    <UserInfoBox
+      elevation={10}
+      onClick={() => isDefault && setIsDefault(false)}
+    >
       {isDefault ? (
         <>
           {avatar && (

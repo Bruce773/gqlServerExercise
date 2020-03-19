@@ -10,7 +10,15 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <HomeScreen />
+      <div
+        style={{
+          backgroundColor: "#26292d",
+          paddingTop: 10,
+          paddingBottom: 10
+        }}
+      >
+        <HomeScreen />
+      </div>
     </ApolloProvider>
   );
 }
