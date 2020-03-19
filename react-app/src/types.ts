@@ -3,3 +3,7 @@ export interface User {
   avatar?: string;
   friends?: [User];
 }
+
+export interface AllUsers {
+  allUsers: [User];
+}

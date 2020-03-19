@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { User } from "../types";
+import { User } from "../../types";
 import {
   UserEmail,
   FriendsEmail,
@@ -14,9 +14,7 @@ import {
   InlineColumn
 } from "./elements";
 import { useFormik } from "formik";
-import { UseCurrentUser_LogInUser } from "../Hooks/useCurrentUser";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import { UseCurrentUser_LogInUser } from "../../Hooks/useCurrentUser";
 
 export const UserInfoSection: React.FC<User & {
   logInUser: UseCurrentUser_LogInUser;
