@@ -1,18 +1,24 @@
 import styled from "styled-components";
+import Typography from "@material-ui/core/Typography";
 
-export const StyledTitle = styled.div`
-  font-size: 52px;
+export const StyledTitle = styled(Typography)`
+  && {
+    font-size: 40px;
+  }
   text-align: center;
-  color: #44972cf2;
+  color: #fff;
 `;
 
-export const Subtitle = styled.div`
+export const Subtitle = styled(Typography)`
   font-size: 20px;
   text-align: center;
   color: #abd8ff;
+  && {
+    font-weight: 400;
+  }
 `;
 
 export const Divider = styled.div<{ top?: number; bottom?: number }>`
-  ${({ top }) => `margin-top: ${top}px;`}
-  ${({ bottom }) => `margin-bottom: ${bottom}px;`}
+  ${({ top }) => top && `margin-top: ${top}px;`}
+  ${({ bottom }) => bottom && `margin-bottom: ${bottom}px;`}
 `;

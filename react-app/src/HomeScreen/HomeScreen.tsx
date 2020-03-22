@@ -12,11 +12,12 @@ export const HomeScreen: React.FC = () => {
 
   return (
     <>
-      <StyledTitle>Welcome to a test!</StyledTitle>
-      <Subtitle>Go ahead! Pick a user</Subtitle>
+      <Divider top={40} bottom={40} />
+      <StyledTitle variant="h2">Welcome to a test!</StyledTitle>
+      <Subtitle variant="h6">Go ahead! Pick a user</Subtitle>
       {loading && "Loading..."}
       {error && error}
-      <Divider top={80} bottom={80} />
+      <Divider top={40} bottom={40} />
       {!currentUser ? (
         data && <UsersList />
       ) : (

@@ -38,16 +38,18 @@ export const UserInfoSection: React.FC<User & {
         <>
           {avatar && (
             <>
-              <AvatarText>{avatar}</AvatarText>
+              <AvatarText variant="h6">{avatar}</AvatarText>
               <Avatar />
             </>
           )}
-          <UserEmail>{email}</UserEmail>
-          <TitleText>Friends:</TitleText>
+          <UserEmail variant="h5">{email}</UserEmail>
+          <TitleText variant="h5">Friends:</TitleText>
           {friends ? (
-            friends.map(({ email }) => <FriendsEmail>{email}</FriendsEmail>)
+            friends.map(({ email }) => (
+              <FriendsEmail variant="h5">{email}</FriendsEmail>
+            ))
           ) : (
-            <FriendsEmail>
+            <FriendsEmail variant="h5">
               Uh oh! It doesn't look like you have any friends <br />
               Click <StyledButton>HERE</StyledButton> to make some!
             </FriendsEmail>

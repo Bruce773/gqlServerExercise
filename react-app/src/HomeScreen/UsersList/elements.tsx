@@ -1,21 +1,24 @@
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
+import Typeography from "@material-ui/core/Typography";
 
-export const UserEmail = styled.div`
+export const UserEmail = styled(Typeography)`
   text-align: center;
-  font-size: 30px;
+  && {
+    font-size: 30px;
+  }
   color: darkgray;
   margin-bottom: 10px;
   word-break: break-word;
 `;
 
-export const FriendsEmail = styled.div`
+export const FriendsEmail = styled(Typeography)`
   text-align: center;
   color: #d98212;
   font-size: 26px;
 `;
 
-export const TitleText = styled.div`
+export const TitleText = styled(Typeography)`
   text-align: center;
   color: #5c995cb3;
   font-size: 30px;
@@ -24,8 +27,8 @@ export const TitleText = styled.div`
 
 export const UserInfoBox = styled(Paper)`
   width: 50%;
-  max-width: 900px;
-  min-width: 400px;
+  max-width: 680px;
+  min-width: 350px;
   padding: 10px;
   text-align: center;
   margin: auto;
@@ -50,7 +53,7 @@ export const Avatar = styled.div`
   width: 50px;
 `;
 
-export const AvatarText = styled.div`
+export const AvatarText = styled(Typeography)`
   display: block;
   font-size: 20px;
 `;
@@ -70,7 +73,7 @@ export const CenterWrapper = styled.div`
 
 export const ExitButton = styled.div`
   font-size: 17px;
-  text-align: left;
+  text-align: right;
   box-shadow: 1px 1px 6px 0px #7d9e7d82;
   border-radius: 50%;
   width: fit-content;
