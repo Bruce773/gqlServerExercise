@@ -42,6 +42,7 @@ const updateUserEmail = (_, { input: { currentEmail, newEmail } }) => {
     return { error: "Email is not connected to an account!" };
   }
   data[currentEmail].email = newEmail;
+  updateDatabaseFile();
   return { newEmail: data[currentEmail].email };
 };
 
