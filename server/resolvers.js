@@ -1,4 +1,11 @@
-const { data } = require("./database.js");
+// const { data } = require("./database.js");
+const fs = require("fs");
+
+let data = {};
+
+fs.readFile("./database.json", (err, fileData) => {
+  data = JSON.parse(fileData);
+});
 
 const allUsers = () => {
   const usersList = [];
@@ -30,6 +37,8 @@ const updateUserEmail = (_, { input: { currentEmail, newEmail } }) => {
   data[currentEmail].email = newEmail;
   return { newEmail: data[currentEmail].email };
 };
+
+const createNewUser = (_, { input: { email, password, avatar } }) => {};
 
 module.exports.resolvers = {
   Query: {

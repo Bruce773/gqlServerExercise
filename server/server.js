@@ -38,6 +38,12 @@ const typeDefs = gql`
     userPassword: String!
   }
 
+  input CreateNewUserInput {
+    email: String!
+    password: String!
+    avatar: String
+  }
+
   type Query {
     allUsers: [User]!
     allFriends(input: EmailInput): [User]
@@ -46,9 +52,12 @@ const typeDefs = gql`
   type Mutation {
     verifyUser(input: VerifyUserInput): Verified!
     updateUserEmail(input: UpdateEmailInput): UpdatedEmail!
+    createNewUser(input: CreateNewUserInput): User!
   }
 `;
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen(8181).then(() => console.log("gql server running on port 8181"));
+server
+  .listen(8181)
+  .then(() => console.log("🚀 gql server running on port 8181"));
