@@ -52,7 +52,7 @@ const typeDefs = gql`
   type Mutation {
     verifyUser(input: VerifyUserInput): Verified!
     updateUserEmail(input: UpdateEmailInput): UpdatedEmail!
-    createNewUser(input: CreateNewUserInput): User!
+    createNewUser(input: CreateNewUserInput): Verified!
   }
 `;
 

@@ -7,6 +7,13 @@ fs.readFile("./database.json", (err, fileData) => {
   data = JSON.parse(fileData);
 });
 
+const updateDatabaseFile = () => {
+  fs.writeFile("./database.json", JSON.stringify(data), err => {
+    if (err) throw err;
+    console.log("The file has been saved!");
+  });
+};
+
 const allUsers = () => {
   const usersList = [];
   let i = 0;
@@ -38,7 +45,14 @@ const updateUserEmail = (_, { input: { currentEmail, newEmail } }) => {
   return { newEmail: data[currentEmail].email };
 };
 
-const createNewUser = (_, { input: { email, password, avatar } }) => {};
+const createNewUser = (_, { input: { email, password, avatar } }) => {
+  if (!email) return { error: "Email is not valid" };
+  if (!password) return { error: "Password is not valid" };
+  const userData = { email, password, avatar: avatar ? avatar : null };
+  data[email] = userData;
+  updateDatabaseFile();
+  return { userData, isUser: true };
+};
 
 module.exports.resolvers = {
   Query: {
@@ -48,6 +62,7 @@ module.exports.resolvers = {
   },
   Mutation: {
     verifyUser,
-    updateUserEmail
+    updateUserEmail,
+    createNewUser
   }
 };
