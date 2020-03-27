@@ -1,10 +1,10 @@
 import React from "react";
 import { StyledTitle, Divider, Subtitle } from "./elements";
 import { useQuery } from "react-apollo";
-import { useCurrentUser } from "../Hooks";
-import { GET_ALL_USERS } from "../operations";
+import { useCurrentUser } from "hooks";
+import { GET_ALL_USERS } from "operations";
 import { UsersList } from "./UsersList";
-import { AllUsers } from "../types";
+import { AllUsers } from "types";
 
 export const HomeScreen: React.FC = () => {
   const { loading, error, data } = useQuery<AllUsers>(GET_ALL_USERS);

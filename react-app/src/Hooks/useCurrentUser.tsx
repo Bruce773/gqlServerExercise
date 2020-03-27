@@ -1,4 +1,4 @@
-import { User } from "../types";
+import { User } from "types";
 import { useMutation } from "react-apollo";
 import { gql } from "apollo-boost";
 import { useState } from "react";

@@ -1,4 +1,3 @@
-// const { data } = require("./database.js");
 const fs = require("fs");
 
 let data = {};
